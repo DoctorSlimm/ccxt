@@ -93,6 +93,7 @@ class Exchange {
         'bitvavo',
         'bitz',
         'bl3p',
+        'blockchaincom',
         'btcalpha',
         'btcbox',
         'btcmarkets',

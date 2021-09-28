@@ -50,10 +50,9 @@
     "postinstall": "node postinstall"
   },
   "types": "./ccxt.d.ts",
-  "dependencies": {},
   "devDependencies": {
     "ansicolor": "1.1.81",
-    "as-table": "1.0.37",
+    "as-table": "^1.0.37",
     "asciichart": "1.5.25",
     "browserify": "14.5.0",
     "chai": "4.1.2",
@@ -570,12 +569,16 @@
     "Binance COIN-M",
     "Binance USDⓈ-M",
     "eqonex.com",
-    "EQONEX"
+    "EQONEX",
+    "blockchain.com"
   ],
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/ccxt",
     "logo": "https://opencollective.com/ccxt/logo.txt"
   },
-  "ethereum": "0x26a3CB49578F07000575405a57888681249c35Fd"
+  "ethereum": "0x26a3CB49578F07000575405a57888681249c35Fd",
+  "dependencies": {
+    "ccxt": "^1.57.3"
+  }
 }

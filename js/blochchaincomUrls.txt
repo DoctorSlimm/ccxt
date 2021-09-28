@@ -1,0 +1,46 @@
+baseURL: https://api.blockchain.com/v3/exchange
+
+Content-Type: 'application/json'
+header: 'X-API-Token'; 'yourToken'
+
+symbol layout: "BASE-QUOTE"
+
+Public:
+    GET L2 OrderBook: https://api.blockchain.com/v3/exchange/l2/{symbol}
+    GET L3 OrderBook: https://api.blockchain.com/v3/exchange/l3/{symbol}
+    GET tickers/price (all) : https://api.blockchain.com/v3/exchange/tickers
+    GET tickers/price (specific) : https://api.blockchain.com/v3/exchange/tickers/{symbol}
+    GET symbols (all): https://api.blockchain.com/v3/exchange/symbols
+    GET symbols (specific): https://api.blockchain.com/v3/exchange/symbols/{symbol}
+
+
+Private/Trading:
+    GET Current Fee Level: https://api.blockchain.com/v3/exchange/fees
+    GET a list of orders: https://api.blockchain.com/v3/exchange/orders
+        more complex query params to specify timeframes of orders to return (or paginate)
+
+    POST add an order: https://api.blockchain.com/v3/exchange/orders
+        body: {
+                "clOrdId": "123456",
+                "ordType": "LIMIT",
+                "symbol": "BTC-USD",
+                "side": "BUY",
+                "orderQty": "0.1",
+                "price": "100"
+              }
+
+    DELETE all open orders (of a symbol if specified): https://api.blockchain.com/v3/exchange/orders
+        (query-optional) symbol='BASE-QUOTE'
+
+    GET specific order: https://api.blockchain.com/v3/exchange/orders/{orderId}
+    ... further path...
+
+    DELETE cancel a trade: https://api.blockchain.com/v3/exchange/orders/{orderId}
+        ... additional path param (orderId)
+
+    GET list of all filled orders: https://api.blockchain.com/v3/exchange/trades
+        ... additional query parameters
+        (includes partial fills)
+
+    GET list of individual fills: https://api.blockchain.com/v3/exchange/fills
+
